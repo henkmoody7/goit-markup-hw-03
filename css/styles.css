@@ -4,6 +4,9 @@
   --accent-color: #2196f3;
   --filter-btn-color: #212121;
   --filter-btn-accent: #ffffff;
+  --standard-margin: 30px;
+  --section-padding: 94px;
+  --border-style: 1px solid #eeeeee;
 }
 
 body {
@@ -24,6 +27,10 @@ ul {
 }
 img {
   display: block;
+  /* width: 100%; */
+}
+button {
+  cursor: pointer;
 }
 .link {
   text-decoration: none;
@@ -50,11 +57,15 @@ img {
   padding-left: 15px;
   padding-right: 15px;
 }
+.section {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
 /* --------------------------------HEADER-------------------------------------- */
 .header {
   padding-top: 24px;
   padding-bottom: 25px;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: var(--border-style);
 }
 .logo {
   margin-right: 93px;
@@ -67,6 +78,7 @@ img {
   color: #2196f3;
 }
 .logo-text {
+  margin-right: 0;
   color: #000000;
 }
 .main-nav {
@@ -120,7 +132,8 @@ img {
 }
 
 .hero-tittle {
-  margin-bottom: 30px;
+  margin-bottom: var(--standard-margin);
+
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -140,8 +153,6 @@ img {
   letter-spacing: 0.06em;
   color: #ffffff;
   background-color: #2196f3;
-
-  cursor: pointer;
 }
 .hero-button:hover,
 .hero-button:focus {
@@ -149,15 +160,14 @@ img {
 }
 
 /* --------------------------------BENEFITS-------------------------------------- */
-.benefits {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
 .benefits-list {
   display: flex;
 }
-.benefits-list > .benefits-item + .benefits-item {
-  margin-left: 30px;
+.benefits-item {
+  max-width: 270px;
+}
+.benefits-item + .benefits-item {
+  margin-left: var(--standard-margin);
 }
 .benefits-tittle {
   margin-bottom: 10px;
@@ -177,7 +187,7 @@ img {
 
 /* --------------------------------WORK-------------------------------------- */
 .work {
-  padding-bottom: 94px;
+  padding-top: 0;
 }
 .tittle {
   margin-bottom: 50px;
@@ -190,33 +200,31 @@ img {
 }
 .work-list {
   display: flex;
-  margin: -15px;
+  margin: calc(-1 * var(--standard-margin) / 2);
 }
 .work-item {
-  flex-basis: calc(100% / 3 - 3 * 30px);
-  margin: 15px;
+  flex-basis: calc(100% / 3 - 3 * var(--standard-margin));
+  margin: calc(var(--standard-margin) / 2);
 }
 
 /* --------------------------------TEAM-------------------------------------- */
 .team {
-  padding-top: 186px;
-  padding-bottom: 94px;
   background-color: #f5f4fa;
 }
 .team-list {
   display: flex;
-  margin: -15px;
+  margin: calc(-1 * var(--standard-margin) / 2);
 }
 .team-item {
   background-color: #ffffff;
-  flex-basis: calc(100% / 4 - 4 * 30px);
-  margin: 15px;
+  flex-basis: calc(100% / 4 - 4 * var(--standard-margin));
+  margin: calc(var(--standard-margin) / 2);
 }
 .team-card {
   text-align: center;
 }
 .team-low-tittle {
-  margin-top: 30px;
+  margin-top: var(--standard-margin);
   margin-bottom: 10px;
 
   font-weight: 500;
@@ -227,7 +235,7 @@ img {
   color: var(--tittle-color);
 }
 .team-text {
-  margin-bottom: 30px;
+  margin-bottom: var(--standard-margin);
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
@@ -243,6 +251,9 @@ img {
 }
 .logo-footer-text {
   color: #ffffff;
+}
+.footer .logo {
+  margin-right: 0;
 }
 .footer-list {
   margin-top: 20px;
@@ -274,8 +285,10 @@ img {
   margin-right: 8px;
 }
 .filter-btn {
+  padding: 6px 22px;
   border-radius: 4px;
   border-color: transparent;
+
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
@@ -283,8 +296,6 @@ img {
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--filter-btn-color);
-
-  cursor: pointer;
 }
 .filter-btn:hover,
 .filter-btn:focus {
@@ -297,19 +308,14 @@ img {
 }
 
 /* --------------------------------PROJECTS-------------------------------------- */
-.projects {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
 .projects-list {
   display: flex;
   flex-wrap: wrap;
-  margin: -15px;
+  margin: calc(-1 * var(--standard-margin) / 2);
 }
 .projects-item {
-  flex-basis: calc(100% / 3 - 3 * 30px);
-  margin: 15px;
-  border: 1px solid #eeeeee;
+  flex-basis: calc(100% / 3 - 3 * var(--standard-margin));
+  margin: calc(var(--standard-margin) / 2);
 }
 .projects-tittle {
   font-size: 18px;
@@ -324,5 +330,6 @@ img {
   color: var(--text-color);
 }
 .projects-content {
-  margin: 20px 24px;
+  padding: 20px 24px;
+  border: var(--border-style);
 }
