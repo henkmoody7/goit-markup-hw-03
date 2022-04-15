@@ -7,6 +7,8 @@
   --standard-margin: 30px;
   --section-padding: 94px;
   --border-style: 1px solid #eeeeee;
+  --shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 body {
@@ -63,14 +65,14 @@ button {
 }
 /* --------------------------------HEADER-------------------------------------- */
 .header {
-  padding-top: 24px;
-  padding-bottom: 25px;
   border-bottom: var(--border-style);
 }
 .logo {
+  padding-top: 24px;
+  padding-bottom: 25px;
   margin-right: 93px;
 
-  font-family: 'Raleway';
+  font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.2;
@@ -95,6 +97,10 @@ button {
   margin-right: auto;
 }
 .header-link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -111,6 +117,10 @@ button {
 }
 
 .header-contact {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -126,7 +136,7 @@ button {
 }
 /* --------------------------------MAIN-------------------------------------- */
 .hero {
-  padding: 200px 452px;
+  padding: 200px 0;
   background-color: #2f303a;
   text-align: center;
 }
@@ -143,6 +153,10 @@ button {
 }
 
 .hero-button {
+  padding: 10px 32px;
+  border: none;
+  border-radius: 4px;
+
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
@@ -216,12 +230,11 @@ button {
   background-color: #ffffff;
   flex-basis: calc(100% / 4 - 4 * var(--standard-margin));
   margin: calc(var(--standard-margin) / 2);
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: var(--shadow);
 }
-.team-card {
-  text-align: center;
-}
+
 .team-low-tittle {
-  margin-top: var(--standard-margin);
   margin-bottom: 10px;
 
   font-weight: 500;
@@ -232,12 +245,15 @@ button {
   color: var(--tittle-color);
 }
 .team-text {
-  margin-bottom: var(--standard-margin);
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--text-color);
+}
+.team-content {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 /* --------------------------------FOOTER-------------------------------------- */
@@ -278,7 +294,7 @@ button {
   justify-content: center;
   margin-bottom: 50px;
 }
-.filter-item {
+.filter-item:not(:last-child) {
   margin-right: 8px;
 }
 .filter-btn {
